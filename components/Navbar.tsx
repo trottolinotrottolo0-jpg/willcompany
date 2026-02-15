@@ -5,9 +5,9 @@ const menuItems = [
   {
     title: "CREATIVE AGENCY",
     path: "/creative",
-    color: "text-creative",
-    hoverColor: "hover:text-creative",
-    bulletColor: "bg-creative",
+    color: "text-willOrange",
+    hoverColor: "hover:text-willOrange",
+    bulletColor: "bg-willOrange",
     submenu: [
       { label: "Servizi", path: "/creative/servizi" },
       { label: "Progetti", path: "/creative/progetti" },
@@ -102,11 +102,11 @@ const Navbar: React.FC = () => {
 
         {/* Center Navigation - Creative & Performance */}
         <div className="hidden lg:flex items-center absolute left-1/2 transform -translate-x-1/2">
-          <Link to="/creative" className="text-sm font-black uppercase tracking-widest text-white hover:text-creative transition-colors">
+          <Link to="/creative" className={`text-sm font-black uppercase tracking-widest text-white transition-colors ${location.pathname === '/' ? 'hover:text-metallic-silver' : 'hover:text-willOrange'}`}>
             CREATIVE AGENCY
           </Link>
-          <span className="mx-6 text-willOrange font-light text-xl">|</span>
-          <Link to="/performance" className="text-sm font-black uppercase tracking-widest text-white hover:text-performance transition-colors">
+          <span className={`mx-6 font-light text-xl ${location.pathname === '/' ? 'text-metallic-silver animate-[metallicShine_3s_linear_infinite]' : 'text-willOrange'}`}>|</span>
+          <Link to="/performance" className={`text-sm font-black uppercase tracking-widest text-white transition-colors ${location.pathname === '/' ? 'hover:text-metallic-silver' : 'hover:text-performance'}`}>
             PERFORMANCE
           </Link>
         </div>
@@ -115,7 +115,11 @@ const Navbar: React.FC = () => {
         <div className="flex items-center gap-6">
           <Link 
             to="/profile" 
-            className="hidden md:block bg-willOrange text-white px-8 py-3 rounded-md font-black text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all shadow-[0_0_20px_rgba(255,85,0,0.3)]"
+            className={`hidden md:block px-8 py-3 rounded-md font-black text-xs uppercase tracking-widest transition-all ${
+              location.pathname === '/' 
+                ? 'bg-metallic-silver text-black hover:bg-white shadow-[0_0_20px_rgba(192,192,192,0.4)]' 
+                : 'bg-willOrange text-white hover:bg-white hover:text-black shadow-[0_0_20px_rgba(255,85,0,0.3)]'
+            }`}
           >
             PRENOTA UNA CALL
           </Link>

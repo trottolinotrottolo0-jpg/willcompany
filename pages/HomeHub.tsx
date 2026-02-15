@@ -91,7 +91,7 @@ const HomeHub: React.FC = () => {
 
             <Reveal direction="left" delay={200}>
               <h1 className="text-[50px] font-black uppercase tracking-wide text-white leading-tight mb-6 max-w-4xl">
-                <span className="text-willOrange">WHERE</span> IDENTITY <span className="text-willOrange">LEADS.</span>
+                <span className="text-metallic-silver animate-[metallicShine_3s_linear_infinite]">WHERE</span> IDENTITY <span className="text-metallic-silver animate-[metallicShine_3s_linear_infinite]">LEADS.</span>
               </h1>
             </Reveal>
 
@@ -129,7 +129,7 @@ const HomeHub: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
              <Reveal direction="left">
                <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight leading-none mb-8">
-                 Decisioni guidate<br/>dall'<span className="text-willOrange">Identità.</span>
+                 Decisioni guidate<br/>dall'<span className="text-metallic-silver animate-[metallicShine_3s_linear_infinite]">Identità.</span>
                </h2>
                <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                  <p>
@@ -139,7 +139,7 @@ const HomeHub: React.FC = () => {
                    Portiamo chiarezza umana nei processi decisionali, aiutando le aziende a crescere senza perdere coerenza, energia e direzione.
                  </p>
                  <p>
-                   Attraverso il nostro metodo e una strategia costruita assieme. <span className="text-black border-b border-willOrange/50">Noi portiamo le competenze, tu la voglia di crescere.</span>
+                   Attraverso il nostro metodo e una strategia costruita assieme. <span className="text-black border-b border-gray-400">Noi portiamo le competenze, tu la voglia di crescere.</span>
                  </p>
                </div>
              </Reveal>
@@ -148,19 +148,19 @@ const HomeHub: React.FC = () => {
                  <h3 className="text-2xl font-black uppercase mb-6 text-black">Ti sei mai sentito così?</h3>
                  <ul className="space-y-4 text-gray-600">
                    <li className="flex gap-4">
-                     <span className="text-willOrange font-bold">✕</span>
+                     <span className="text-metallic-silver font-bold">✕</span>
                      <span>L'imprenditore è sovraccarico. Tutto passa da te.</span>
                    </li>
                    <li className="flex gap-4">
-                     <span className="text-willOrange font-bold">✕</span>
+                     <span className="text-metallic-silver font-bold">✕</span>
                      <span>Decidi sempre con urgenza e sotto pressione.</span>
                    </li>
                    <li className="flex gap-4">
-                     <span className="text-willOrange font-bold">✕</span>
+                     <span className="text-metallic-silver font-bold">✕</span>
                      <span>Ti ritrovi a cambiare spesso direzione.</span>
                    </li>
                    <li className="flex gap-4">
-                     <span className="text-willOrange font-bold">✕</span>
+                     <span className="text-metallic-silver font-bold">✕</span>
                      <span>L'identità dell'azienda si è confusa con l'operatività.</span>
                    </li>
                  </ul>
@@ -174,7 +174,7 @@ const HomeHub: React.FC = () => {
       <section className="py-24 md:py-40 bg-premiumBlack">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <Reveal direction="top" className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-6 text-white">Il Nostro <span className="text-willOrange">Metodo</span></h2>
+            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-6 text-white">Il Nostro <span className="text-metallic-silver animate-[metallicShine_3s_linear_infinite]">Metodo</span></h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Lavoriamo su tre pilastri fondamentali per costruire aziende solide, lucide e guidabili.
             </p>
@@ -186,8 +186,8 @@ const HomeHub: React.FC = () => {
               { t: "DECISIONI", d: "Aiutiamo l'azienda a rallentare dove serve, a scegliere cosa non fare, creare criteri decisionali chiari." },
               { t: "DIREZIONE E ALLINEAMENTO", d: "Visione, priorità, persone, azioni chiave per uscire dal 'si è sempre fatto così'." }
             ].map((item, i) => (
-              <Reveal key={i} direction="bottom" delay={i * 200} className="glass-panel p-10 rounded-[30px] border-white/5 hover:border-willOrange/30 transition-all group">
-                <div className="text-6xl font-black text-white/10 mb-6 group-hover:text-willOrange/20 transition-colors">0{i+1}</div>
+              <Reveal key={i} direction="bottom" delay={i * 200} className="glass-panel p-10 rounded-[30px] border-white/5 hover:border-gray-500 transition-all group">
+                <div className="text-6xl font-black text-white/10 mb-6 group-hover:text-metallic-silver transition-colors">0{i+1}</div>
                 <h3 className="text-2xl font-black uppercase mb-4 text-white">{item.t}</h3>
                 <p className="text-gray-400 leading-relaxed">{item.d}</p>
               </Reveal>
@@ -201,7 +201,7 @@ const HomeHub: React.FC = () => {
         <div className="max-w-[1000px] mx-auto px-6 md:px-10">
           <Reveal direction="scale">
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-12 text-black">
-              Non serve "più marketing",<br/>servono <span className="text-willOrange">risultati reali.</span>
+              Non serve "più marketing",<br/>servono <span className="text-metallic-silver animate-[metallicShine_3s_linear_infinite]">risultati reali.</span>
             </h2>
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-16">
@@ -210,13 +210,13 @@ const HomeHub: React.FC = () => {
                 "Più controllo", "Più chiarezza", "Team allineato"
               ].map((res, i) => (
                 <div key={i} className="bg-gray-100 py-6 px-4 rounded-2xl border border-gray-200 flex items-center justify-center gap-2">
-                  <span className={`w-2 h-2 rounded-full bg-willOrange`}></span>
+                  <span className={`w-2 h-2 rounded-full bg-metallic-silver`}></span>
                   <span className="font-bold uppercase text-sm md:text-base text-gray-800">{res}</span>
                 </div>
               ))}
             </div>
 
-            <div className="bg-gradient-to-r from-willOrange/10 to-willOrange/5 p-10 rounded-[30px] border border-willOrange/20">
+            <div className="bg-gradient-to-r from-gray-200 to-gray-100 p-10 rounded-[30px] border border-gray-300">
               <h3 className="text-2xl md:text-3xl font-black uppercase mb-4 text-black">Risultato Finale</h3>
               <p className="text-xl md:text-2xl text-gray-700 font-light">
                 Un'azienda che cresce senza perdere identità, energia e direzione.
@@ -236,7 +236,7 @@ const HomeHub: React.FC = () => {
             <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
               Serve una strategia di posizionamento. Noi la costruiamo con te.
             </p>
-            <Link to="/profile" className="inline-block px-12 py-5 bg-willOrange text-white rounded-full font-black uppercase text-lg tracking-widest hover:scale-105 transition-transform shadow-[0_0_40px_rgba(255,85,0,0.4)]">
+            <Link to="/profile" className="inline-block px-12 py-5 bg-metallic-silver text-black rounded-full font-black uppercase text-lg tracking-widest hover:scale-105 transition-transform shadow-[0_0_40px_rgba(192,192,192,0.4)]">
               INIZIAMO SUBITO
             </Link>
             <p className="mt-4 text-sm text-gray-600 uppercase tracking-widest font-bold">Raccontaci la tua storia</p>

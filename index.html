@@ -18,6 +18,7 @@
                         resources: '#00FF85',
                         premiumBlack: '#050505',
                         willOrange: '#FF5500', // New Corporate Orange
+                        willSilver: '#C0C0C0', // Metallic Silver
                         premiumGray: '#101010',
                         glassWhite: 'rgba(255, 255, 255, 0.03)',
                     },
@@ -118,6 +119,54 @@
         /* Typography spacing */
         .tracking-premium { letter-spacing: -0.05em; }
         .tracking-wide-premium { letter-spacing: 0.5em; }
+
+        /* Metallic Silver Animation */
+        @keyframes metallicShine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        .text-metallic-silver {
+            background: linear-gradient(
+                90deg,
+                #8E8E8E 0%,
+                #D4D4D4 20%,
+                #FFFFFF 50%,
+                #D4D4D4 80%,
+                #8E8E8E 100%
+            );
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: metallicShine 4s linear infinite;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .bg-metallic-silver {
+            background: linear-gradient(
+                90deg,
+                #A0A0A0 0%,
+                #E0E0E0 20%,
+                #FFFFFF 50%,
+                #E0E0E0 80%,
+                #A0A0A0 100%
+            );
+            background-size: 200% auto;
+            animation: metallicShine 4s linear infinite;
+            box-shadow: 0 0 20px rgba(192, 192, 192, 0.4);
+        }
+
+        .border-metallic-silver {
+             border-image: linear-gradient(
+                90deg,
+                #8E8E8E 0%,
+                #FFFFFF 50%,
+                #8E8E8E 100%
+            ) 1;
+            animation: metallicShine 4s linear infinite;
+        }
 
         ::-webkit-scrollbar { width: 4px; background: transparent; }
         ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
