@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal';
+import VideoPlaceholder from '../components/VideoPlaceholder';
 
 const CreativeLanding: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const CreativeLanding: React.FC = () => {
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         {/* Background Stars & Effects */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[url('https://cdn.pixabay.com/photo/2011/12/14/12/21/orion-nebula-11107_1280.jpg')] bg-cover bg-center opacity-40 mix-blend-screen" />
+          <VideoPlaceholder variant="creative" className="w-full h-full opacity-15" />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent" />
           <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent" />
         </div>
@@ -34,27 +35,29 @@ const CreativeLanding: React.FC = () => {
             </Reveal>
 
             <Reveal direction="left" delay={200}>
-              <h1 className="text-[50px] font-black uppercase tracking-wide text-white leading-tight mb-6 max-w-4xl">
-                <span className="text-willOrange">WHERE</span> IDENTITY <span className="text-willOrange">LEADS.</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-wide text-white leading-tight mb-6 max-w-4xl">
+                Strategie che <span className="text-willOrange">portano clienti</span>.
               </h1>
             </Reveal>
 
             <Reveal direction="left" delay={400}>
-              <p className="text-gray-400 text-[30px] max-w-3xl leading-relaxed font-light">
-                Posizioniamo la persona al primo posto. Crediamo che ogni decisione aziendale nasca da una persona.
+              <p className="text-gray-300 text-xl md:text-2xl max-w-3xl leading-relaxed font-light">
+                Costruiamo la tua identità e il tuo posizionamento con un metodo strategico, chiaro e potente.
               </p>
             </Reveal>
 
             <Reveal direction="left" delay={600}>
-              <div className="flex items-center gap-8 pt-4">
-                <div className="flex items-center gap-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all">
-                   <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" className="h-6 w-auto" alt="Google" />
-                   <span className="font-bold text-gray-500">Partner</span>
-                </div>
-                <div className="flex items-center gap-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all">
-                   <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" className="h-5 w-auto" alt="Google" />
-                   <div className="flex text-[#F4B400]">★★★★★</div>
-                </div>
+              <div className="flex flex-wrap gap-3 pt-3">
+                {['Web Design','E‑Commerce','ADV','Digital Marketing','Brand Identity','AI SEO','Creazione Contenuti'].map((chip) => (
+                  <span key={chip} className="text-[10px] font-black uppercase tracking-widest px-3 py-2 rounded-full border border-willOrange/40 text-white/90">
+                    {chip}
+                  </span>
+                ))}
+              </div>
+              <div className="pt-2">
+                <Link to="/profile" className="inline-block px-10 py-4 bg-willOrange text-white rounded-full font-black uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_40px_rgba(255,85,0,0.4)]">
+                  Raccontaci il tuo progetto
+                </Link>
               </div>
             </Reveal>
           </div>
@@ -125,9 +128,9 @@ const CreativeLanding: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { t: "IDENTITÀ DEL LEADER", d: "Il ruolo, la responsabilità, processi decisionali anche sotto pressione." },
-              { t: "DECISIONI", d: "Aiutiamo l'azienda a rallentare dove serve, a scegliere cosa non fare, creare criteri decisionali chiari." },
-              { t: "DIREZIONE E ALLINEAMENTO", d: "Visione, priorità, persone, azioni chiave per uscire dal 'si è sempre fatto così'." }
+              { t: "Chiarezza", d: "Allineiamo la tua identità alla tua comunicazione attraverso uno storytelling coerente con il brand." },
+              { t: "Direzione", d: "Trasformiamo la strategia in un piano operativo di marketing scalabile e misurabile." },
+              { t: "Risultati", d: "Contenuti e campagne che trasmettono autenticità e coinvolgono clienti e team." }
             ].map((item, i) => (
               <Reveal key={i} direction="bottom" delay={i * 200} className="glass-panel p-10 rounded-[30px] border-white/5 hover:border-willOrange/30 transition-all group">
                 <div className="text-6xl font-black text-white/10 mb-6 group-hover:text-willOrange/20 transition-colors">0{i+1}</div>
@@ -147,14 +150,18 @@ const CreativeLanding: React.FC = () => {
               Non serve "più marketing",<br/>servono <span className="text-willOrange">risultati reali.</span>
             </h2>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-left">
               {[
-                "Meno confusione", "Meno stress", "Meno emergenze",
-                "Più controllo", "Più chiarezza", "Team allineato"
-              ].map((res, i) => (
-                <div key={i} className="bg-gray-100 py-6 px-4 rounded-2xl border border-gray-200 flex items-center justify-center gap-2">
-                  <span className={`w-2 h-2 rounded-full bg-willOrange`}></span>
-                  <span className="font-bold uppercase text-sm md:text-base text-gray-800">{res}</span>
+                { t: 'Più contatti qualificati', d: 'Miglioriamo il posizionamento per farti diventare il punto di riferimento del tuo pubblico, ottenendo contatti più qualificati fin da subito.' },
+                { t: 'Miglior conversione', d: 'Ottimizziamo processi e automazioni per aumentare la conversione dei contatti in clienti.' },
+                { t: 'Crescita costante', d: 'Monitoriamo ogni azione, allineiamo le strategie agli obiettivi e programmiamo il lavoro futuro.' }
+              ].map((b, i) => (
+                <div key={i} className="bg-gray-100 p-8 rounded-2xl border border-gray-200">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="w-2 h-2 rounded-full bg-willOrange" />
+                    <h3 className="text-xl font-black uppercase">{b.t}</h3>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{b.d}</p>
                 </div>
               ))}
             </div>

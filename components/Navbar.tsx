@@ -88,6 +88,42 @@ const Navbar: React.FC = () => {
     setIsOpen(false);
   };
 
+  const isHome = location.pathname === '/';
+  const isPerformance = location.pathname.startsWith('/performance');
+
+  const cta = (() => {
+    if (isHome) {
+      return {
+        to: '/profile',
+        state: undefined as unknown,
+        label: 'PRENOTA UNA CALL',
+        desktopClassName:
+          'bg-metallic-silver text-black hover:bg-white shadow-[0_0_20px_rgba(192,192,192,0.4)]',
+        mobileClassName: 'bg-metallic-silver text-black',
+      };
+    }
+
+    if (isPerformance) {
+      return {
+        to: '/performance',
+        state: { scrollTo: 'ecode' },
+        label: 'SCOPRI IL METODO E‑CODE',
+        desktopClassName:
+          'bg-performance text-white hover:bg-white hover:text-black shadow-[0_0_20px_rgba(0,102,255,0.35)]',
+        mobileClassName: 'bg-performance text-white',
+      };
+    }
+
+    return {
+      to: '/profile',
+      state: undefined as unknown,
+      label: 'PRENOTA UNA CALL',
+      desktopClassName:
+        'bg-willOrange text-white hover:bg-white hover:text-black shadow-[0_0_20px_rgba(255,85,0,0.3)]',
+      mobileClassName: 'bg-willOrange text-white',
+    };
+  })();
+
   return (
     <nav className={`fixed w-full z-[2000] transition-all duration-700 ${scrolled || isOpen ? 'liquid-glass py-4 shadow-2xl' : 'bg-transparent py-8'}`}>
       <div className="max-w-[1600px] mx-auto px-6 md:px-10 flex justify-between items-center relative z-[2001]">
@@ -114,14 +150,11 @@ const Navbar: React.FC = () => {
         {/* Right Section - CTA & Hamburger */}
         <div className="flex items-center gap-6">
           <Link 
-            to="/profile" 
-            className={`hidden md:block px-8 py-3 rounded-md font-black text-xs uppercase tracking-widest transition-all ${
-              location.pathname === '/' 
-                ? 'bg-metallic-silver text-black hover:bg-white shadow-[0_0_20px_rgba(192,192,192,0.4)]' 
-                : 'bg-willOrange text-white hover:bg-white hover:text-black shadow-[0_0_20px_rgba(255,85,0,0.3)]'
-            }`}
+            to={cta.to}
+            state={cta.state}
+            className={`hidden md:block px-8 py-3 rounded-md font-black text-xs uppercase tracking-widest transition-all ${cta.desktopClassName}`}
           >
-            PRENOTA UNA CALL
+            {cta.label}
           </Link>
 
           <button 
@@ -177,11 +210,12 @@ const Navbar: React.FC = () => {
           
           <div className="mt-auto pb-10 text-center md:hidden">
             <Link 
-              to="/profile" 
+              to={cta.to}
+              state={cta.state}
               onClick={() => setIsOpen(false)}
-              className="inline-block w-full bg-willOrange text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest"
+              className={`inline-block w-full px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest ${cta.mobileClassName}`}
             >
-              PRENOTA UNA CALL
+              {cta.label}
             </Link>
           </div>
         </div>

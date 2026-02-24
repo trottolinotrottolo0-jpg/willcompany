@@ -90,14 +90,17 @@ const HomeHub: React.FC = () => {
             </Reveal>
 
             <Reveal direction="left" delay={200}>
-              <h1 className="text-[50px] font-black uppercase tracking-wide text-white leading-tight mb-6 max-w-4xl">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-wide text-white leading-tight mb-6 max-w-4xl">
                 <span className="text-metallic-silver animate-[metallicShine_3s_linear_infinite]">WHERE</span> IDENTITY <span className="text-metallic-silver animate-[metallicShine_3s_linear_infinite]">LEADS.</span>
               </h1>
             </Reveal>
 
             <Reveal direction="left" delay={400}>
-              <p className="text-gray-400 text-[30px] max-w-3xl leading-relaxed font-light">
-                Posizioniamo la persona al primo posto. Crediamo che ogni decisione aziendale nasca da una persona.
+              <p className="text-gray-400 text-lg sm:text-xl md:text-2xl max-w-3xl leading-relaxed font-light">
+                Affianchiamo leader e aziende nei momenti in cui le decisioni contano davvero.
+              </p>
+              <p className="text-gray-500 text-sm sm:text-base md:text-lg max-w-2xl mt-4 font-light">
+                Crediamo che ogni decisione aziendale nasca da una persona. Migliorando noi stessi potremo prendere decisioni migliori.
               </p>
             </Reveal>
 
@@ -124,7 +127,10 @@ const HomeHub: React.FC = () => {
       </section>
 
       {/* Chi Siamo Section (White Background) */}
-      <section className="py-24 md:py-40 bg-white text-black relative">
+      <section className="py-24 md:py-40 bg-white text-black relative z-20">
+        {/* Gradient Transition Overlay */}
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black to-transparent opacity-50 pointer-events-none"></div>
+        
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
              <Reveal direction="left">
@@ -132,9 +138,6 @@ const HomeHub: React.FC = () => {
                  Decisioni guidate<br/>dall'<span className="text-metallic-silver animate-[metallicShine_3s_linear_infinite]">Identità.</span>
                </h2>
                <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-                 <p>
-                   <strong className="text-black">Will Group è il collaboratore strategico per la crescita della tua azienda.</strong> Affianchiamo leader e aziende nei momenti in cui le decisioni contano davvero.
-                 </p>
                  <p>
                    Portiamo chiarezza umana nei processi decisionali, aiutando le aziende a crescere senza perdere coerenza, energia e direzione.
                  </p>
@@ -161,6 +164,14 @@ const HomeHub: React.FC = () => {
                    </li>
                    <li className="flex gap-4">
                      <span className="text-metallic-silver font-bold">✕</span>
+                     <span>Il team è disallineato.</span>
+                   </li>
+                   <li className="flex gap-4">
+                     <span className="text-metallic-silver font-bold">✕</span>
+                     <span>L'azienda cresce ma non senti solidità.</span>
+                   </li>
+                   <li className="flex gap-4">
+                     <span className="text-metallic-silver font-bold">✕</span>
                      <span>L'identità dell'azienda si è confusa con l'operatività.</span>
                    </li>
                  </ul>
@@ -171,7 +182,10 @@ const HomeHub: React.FC = () => {
       </section>
 
       {/* Il Metodo Section (Black Background) */}
-      <section className="py-24 md:py-40 bg-premiumBlack">
+      <section className="py-24 md:py-40 bg-premiumBlack relative z-20">
+        {/* Gradient Transition Overlay */}
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-transparent opacity-10 pointer-events-none"></div>
+
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <Reveal direction="top" className="text-center mb-20">
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-6 text-white">Il Nostro <span className="text-metallic-silver animate-[metallicShine_3s_linear_infinite]">Metodo</span></h2>
@@ -183,8 +197,8 @@ const HomeHub: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { t: "IDENTITÀ DEL LEADER", d: "Il ruolo, la responsabilità, processi decisionali anche sotto pressione." },
-              { t: "DECISIONI", d: "Aiutiamo l'azienda a rallentare dove serve, a scegliere cosa non fare, creare criteri decisionali chiari." },
-              { t: "DIREZIONE E ALLINEAMENTO", d: "Visione, priorità, persone, azioni chiave per uscire dal 'si è sempre fatto così'." }
+              { t: "DECISIONI", d: "Aiutiamo l'azienda a rallentare dove serve, a scegliere cosa non fare, creare criteri decisionali chiari, uscire dal “si è sempre fatto così”." },
+              { t: "DIREZIONE E ALLINEAMENTO", d: "Visione, priorità, persone, azioni chiave." }
             ].map((item, i) => (
               <Reveal key={i} direction="bottom" delay={i * 200} className="glass-panel p-10 rounded-[30px] border-white/5 hover:border-gray-500 transition-all group">
                 <div className="text-6xl font-black text-white/10 mb-6 group-hover:text-metallic-silver transition-colors">0{i+1}</div>
@@ -193,54 +207,126 @@ const HomeHub: React.FC = () => {
               </Reveal>
             ))}
           </div>
+          
+          <Reveal direction="bottom" delay={600} className="mt-16 text-center">
+            <p className="text-xl text-white max-w-3xl mx-auto font-light">
+              Con il nostro metodo allineiamo identità, decisioni e direzione per rendere l'azienda solida, lucida e guidabile.
+            </p>
+            <p className="text-2xl text-metallic-silver mt-4 font-bold animate-[metallicShine_3s_linear_infinite]">
+              Il risultato finale? Un’azienda che cresce senza perdere identità, energia e direzione.
+            </p>
+          </Reveal>
         </div>
       </section>
 
       {/* Risultati Section (White Background) */}
-      <section className="py-24 md:py-40 bg-white text-center">
+      <section className="py-24 md:py-40 bg-white text-center relative z-20">
+        {/* Gradient Transition Overlay */}
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black to-transparent opacity-50 pointer-events-none"></div>
+
         <div className="max-w-[1000px] mx-auto px-6 md:px-10">
           <Reveal direction="scale">
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-12 text-black">
               Non serve "più marketing",<br/>servono <span className="text-metallic-silver animate-[metallicShine_3s_linear_infinite]">risultati reali.</span>
             </h2>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-16">
               {[
                 "Meno confusione", "Meno stress", "Meno emergenze",
                 "Più controllo", "Più chiarezza", "Team allineato"
               ].map((res, i) => (
-                <div key={i} className="bg-gray-100 py-6 px-4 rounded-2xl border border-gray-200 flex items-center justify-center gap-2">
-                  <span className={`w-2 h-2 rounded-full bg-metallic-silver`}></span>
-                  <span className="font-bold uppercase text-sm md:text-base text-gray-800">{res}</span>
+                <div key={i} className="bg-gray-100 py-6 px-4 rounded-2xl border border-gray-200 flex items-center justify-center gap-3 shadow-sm hover:shadow-md transition-shadow">
+                  <span className={`w-3 h-3 rounded-full bg-metallic-silver flex-shrink-0`}></span>
+                  <span className="font-bold uppercase text-sm md:text-base text-gray-800 tracking-wide text-left">{res}</span>
                 </div>
               ))}
             </div>
 
+            <div className="mb-16">
+               <h3 className="text-2xl font-black uppercase mb-8 text-black">Cosa dicono di noi</h3>
+               <div className="aspect-video max-w-4xl mx-auto rounded-[30px] overflow-hidden bg-gray-100 shadow-xl border border-gray-200 relative group cursor-pointer">
+                 <div className="absolute inset-0 flex items-center justify-center bg-black/5 group-hover:bg-black/10 transition-colors">
+                   <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                     <svg className="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                   </div>
+                 </div>
+                 <VideoPlaceholder variant="neutral" className="w-full h-full opacity-50" />
+               </div>
+            </div>
+
             <div className="bg-gradient-to-r from-gray-200 to-gray-100 p-10 rounded-[30px] border border-gray-300">
-              <h3 className="text-2xl md:text-3xl font-black uppercase mb-4 text-black">Risultato Finale</h3>
-              <p className="text-xl md:text-2xl text-gray-700 font-light">
-                Un'azienda che cresce senza perdere identità, energia e direzione.
+              <h3 className="text-2xl md:text-3xl font-black uppercase mb-4 text-black">Non sai da dove iniziare?</h3>
+              <p className="text-xl md:text-2xl text-gray-700 font-light mb-8">
+                Iniziamo dalle cose semplici. Chiamaci e raccontaci la tua storia.
               </p>
+              <Link to="/profile" className="inline-block px-12 py-5 bg-metallic-silver text-black rounded-full font-black uppercase text-lg tracking-widest hover:scale-105 transition-transform shadow-[0_0_40px_rgba(192,192,192,0.4)]">
+                PRENOTA UNA CALL
+              </Link>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* CTA Finale (Black Background) */}
+      {/* Le Divisioni Section */}
       <section className="py-24 bg-premiumBlack border-t border-white/5">
-        <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
-          <Reveal direction="bottom">
-            <h2 className="text-3xl md:text-5xl font-black uppercase mb-8 text-white">
-              Non basta essere online per<br/>acquisire nuovi clienti.
-            </h2>
-            <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-              Serve una strategia di posizionamento. Noi la costruiamo con te.
-            </p>
-            <Link to="/profile" className="inline-block px-12 py-5 bg-metallic-silver text-black rounded-full font-black uppercase text-lg tracking-widest hover:scale-105 transition-transform shadow-[0_0_40px_rgba(192,192,192,0.4)]">
-              INIZIAMO SUBITO
-            </Link>
-            <p className="mt-4 text-sm text-gray-600 uppercase tracking-widest font-bold">Raccontaci la tua storia</p>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          <Reveal direction="top" className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-4 text-white">Le <span className="text-metallic-silver animate-[metallicShine_3s_linear_infinite]">Divisioni</span></h2>
           </Reveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+            {/* Creative Agency */}
+            <Reveal direction="left" className="group">
+              <div className="glass-panel p-10 md:p-14 rounded-[40px] border-white/5 hover:border-willOrange/50 transition-all duration-500 h-full flex flex-col relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-willOrange/10 rounded-full blur-[100px] -mr-32 -mt-32 transition-all group-hover:bg-willOrange/20"></div>
+                
+                <h3 className="text-3xl md:text-4xl font-black uppercase mb-6 text-white group-hover:text-willOrange transition-colors">Will. <span className="text-willOrange">Creative</span></h3>
+                
+                <p className="text-gray-400 text-lg leading-relaxed mb-8 flex-grow">
+                  Oggi non basta essere online per acquisire nuovi clienti. Serve una strategia di posizionamento. Noi la costruiamo con te.
+                </p>
+
+                <div className="space-y-4 mb-10">
+                  {["Più contatti qualificati", "Miglior conversione", "Crescita costante"].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-willOrange"></span>
+                      <span className="text-gray-300 font-bold uppercase text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <Link to="/creative" className="inline-block w-full py-4 bg-transparent border border-willOrange text-willOrange rounded-full font-black uppercase text-center tracking-widest hover:bg-willOrange hover:text-white transition-all">
+                  SCOPRI LA DIVISIONE MARKETING
+                </Link>
+              </div>
+            </Reveal>
+
+            {/* Performance */}
+            <Reveal direction="right" className="group">
+              <div className="glass-panel p-10 md:p-14 rounded-[40px] border-white/5 hover:border-performance/50 transition-all duration-500 h-full flex flex-col relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-performance/10 rounded-full blur-[100px] -mr-32 -mt-32 transition-all group-hover:bg-performance/20"></div>
+                
+                <h3 className="text-3xl md:text-4xl font-black uppercase mb-6 text-white group-hover:text-performance transition-colors">Will. <span className="text-performance">Performance</span></h3>
+                
+                <p className="text-gray-400 text-lg leading-relaxed mb-8 flex-grow">
+                  Aiutare imprenditori, professionisti e aziende a raggiungere massime prestazioni attraverso un sistema integrato che unisce identità, fisiologia e disciplina operativa.
+                </p>
+
+                <div className="space-y-4 mb-10">
+                  {["Chi sei (Essenza)", "Come generi energia (Energia)", "Come trasformi energia in risultati (Esecuzione)"].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-performance"></span>
+                      <span className="text-gray-300 font-bold uppercase text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <Link to="/performance" className="inline-block w-full py-4 bg-transparent border border-performance text-performance rounded-full font-black uppercase text-center tracking-widest hover:bg-performance hover:text-white transition-all">
+                  RIPRENDI IN MANO LA TUA VITA
+                </Link>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
     </div>
