@@ -96,10 +96,10 @@ const HomeHub: React.FC = () => {
             </Reveal>
 
             <Reveal direction="left" delay={400}>
-              <p className="text-gray-400 text-lg sm:text-xl md:text-2xl max-w-3xl leading-relaxed font-light">
+              <p className="text-white text-lg sm:text-xl md:text-2xl max-w-3xl leading-relaxed font-light">
                 Affianchiamo leader e aziende nei momenti in cui le decisioni contano davvero.
               </p>
-              <p className="text-gray-500 text-sm sm:text-base md:text-lg max-w-2xl mt-4 font-light">
+              <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mt-4 font-light">
                 Crediamo che ogni decisione aziendale nasca da una persona. Migliorando noi stessi potremo prendere decisioni migliori.
               </p>
             </Reveal>
@@ -135,7 +135,7 @@ const HomeHub: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
              <Reveal direction="left">
                <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight leading-none mb-8">
-                 Decisioni guidate<br/>dall'<span className="text-metallic-silver animate-[metallicShine_3s_linear_infinite]">Identità.</span>
+                 Decisioni guidate<br/>dall'<span className="text-metallic-silver-strong">Identità.</span>
                </h2>
                <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                  <p>
@@ -147,31 +147,31 @@ const HomeHub: React.FC = () => {
                </div>
              </Reveal>
              <Reveal direction="right">
-               <div className="bg-gray-100 p-10 rounded-[40px] border border-gray-200 shadow-xl">
+                <div className="bg-gray-100 p-10 rounded-[40px] border border-gray-200 shadow-xl">
                  <h3 className="text-2xl font-black uppercase mb-6 text-black">Ti sei mai sentito così?</h3>
                  <ul className="space-y-4 text-gray-600">
                    <li className="flex gap-4">
-                     <span className="text-metallic-silver font-bold">✕</span>
+                     <span className="font-bold text-red-500">✕</span>
                      <span>L'imprenditore è sovraccarico. Tutto passa da te.</span>
                    </li>
                    <li className="flex gap-4">
-                     <span className="text-metallic-silver font-bold">✕</span>
+                     <span className="font-bold text-red-500">✕</span>
                      <span>Decidi sempre con urgenza e sotto pressione.</span>
                    </li>
                    <li className="flex gap-4">
-                     <span className="text-metallic-silver font-bold">✕</span>
+                     <span className="font-bold text-red-500">✕</span>
                      <span>Ti ritrovi a cambiare spesso direzione.</span>
                    </li>
                    <li className="flex gap-4">
-                     <span className="text-metallic-silver font-bold">✕</span>
+                     <span className="font-bold text-red-500">✕</span>
                      <span>Il team è disallineato.</span>
                    </li>
                    <li className="flex gap-4">
-                     <span className="text-metallic-silver font-bold">✕</span>
+                     <span className="font-bold text-red-500">✕</span>
                      <span>L'azienda cresce ma non senti solidità.</span>
                    </li>
                    <li className="flex gap-4">
-                     <span className="text-metallic-silver font-bold">✕</span>
+                     <span className="font-bold text-red-500">✕</span>
                      <span>L'identità dell'azienda si è confusa con l'operatività.</span>
                    </li>
                  </ul>
@@ -201,7 +201,7 @@ const HomeHub: React.FC = () => {
               { t: "DIREZIONE E ALLINEAMENTO", d: "Visione, priorità, persone, azioni chiave." }
             ].map((item, i) => (
               <Reveal key={i} direction="bottom" delay={i * 200} className="glass-panel p-10 rounded-[30px] border-white/5 hover:border-gray-500 transition-all group">
-                <div className="text-6xl font-black text-white/10 mb-6 group-hover:text-metallic-silver transition-colors">0{i+1}</div>
+                <div className="text-6xl font-black text-white mb-6">0{i+1}</div>
                 <h3 className="text-2xl font-black uppercase mb-4 text-white">{item.t}</h3>
                 <p className="text-gray-400 leading-relaxed">{item.d}</p>
               </Reveal>
@@ -227,7 +227,7 @@ const HomeHub: React.FC = () => {
         <div className="max-w-[1000px] mx-auto px-6 md:px-10">
           <Reveal direction="scale">
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-12 text-black">
-              Non serve "più marketing",<br/>servono <span className="text-metallic-silver animate-[metallicShine_3s_linear_infinite]">risultati reali.</span>
+              Non serve "più marketing",<br/>servono <span className="text-metallic-silver-strong">risultati reali.</span>
             </h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-16">
@@ -235,9 +235,9 @@ const HomeHub: React.FC = () => {
                 "Meno confusione", "Meno stress", "Meno emergenze",
                 "Più controllo", "Più chiarezza", "Team allineato"
               ].map((res, i) => (
-                <div key={i} className="bg-gray-100 py-6 px-4 rounded-2xl border border-gray-200 flex items-center justify-center gap-3 shadow-sm hover:shadow-md transition-shadow">
-                  <span className={`w-3 h-3 rounded-full bg-metallic-silver flex-shrink-0`}></span>
-                  <span className="font-bold uppercase text-sm md:text-base text-gray-800 tracking-wide text-left">{res}</span>
+                <div key={i} className="liquid-glass-light py-6 px-4 rounded-2xl flex items-center justify-center gap-3 shadow-md">
+                  <span className="w-3 h-3 rounded-full bg-green-500 flex-shrink-0"></span>
+                  <span className="font-bold uppercase text-sm md:text-base text-black tracking-wide text-left">{res}</span>
                 </div>
               ))}
             </div>

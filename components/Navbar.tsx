@@ -141,7 +141,7 @@ const Navbar: React.FC = () => {
           <Link to="/creative" className={`text-sm font-black uppercase tracking-widest text-white transition-colors ${location.pathname === '/' ? 'hover:text-metallic-silver' : 'hover:text-willOrange'}`}>
             CREATIVE AGENCY
           </Link>
-          <span className={`mx-6 font-light text-xl ${location.pathname === '/' ? 'text-metallic-silver animate-[metallicShine_3s_linear_infinite]' : 'text-willOrange'}`}>|</span>
+          <span className={`mx-6 font-light text-xl ${location.pathname === '/' ? 'text-metallic-silver' : 'text-willOrange'}`}>|</span>
           <Link to="/performance" className={`text-sm font-black uppercase tracking-widest text-white transition-colors ${location.pathname === '/' ? 'hover:text-metallic-silver' : 'hover:text-performance'}`}>
             PERFORMANCE
           </Link>
